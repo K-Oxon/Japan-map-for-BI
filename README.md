@@ -33,7 +33,7 @@ Power BIやTableauで使用できる日本地図(TopoJSON, GeoJSON)
       <td>1741市区町村境界</td>
       <td><a href="data/administrative_area/municipality/ja_municipality_area_5.topojson">ja_municipality_area_5.topojson</a></td>
       <td>WIP</td>
-      <td><img src="img/ja_municipality_area_5.jpg" alt="ja_municipality_area_5.topojson プレビュー" width="220" /></td>
+      <td><img src="img/ja_municipality_area_5.jpg" alt="ja_municipality_area_5.topojson プレビュー" width="300" /></td>
     </tr>
     <tr>
       <td>行政区域</td>
@@ -63,6 +63,10 @@ Power BIやTableauで使用できる日本地図(TopoJSON, GeoJSON)
       <td>WIP</td>
     </tr>
   </tbody>
+  <!-- 横幅を確保するためのダミー行 -->
+  <tfoot>
+  <tr><th colspan=14>$\hspace{88em}$</th></tr>
+  </tfoot>
 </table>
 
 ## ライセンス
