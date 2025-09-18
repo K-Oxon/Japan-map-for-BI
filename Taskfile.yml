@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  init_dwh:
+    desc: Initialize DuckDB DWH database
+    cmds:
+      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/initialize/init_dwh.sql
+
