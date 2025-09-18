@@ -40,7 +40,7 @@ Power BIやTableauで使用できる日本地図(TopoJSON, GeoJSON)
       <td>基礎自治体</td>
       <td>地方公共団体コード6桁</td>
       <td>1741市区町村境界（都道府県界含む）</td>
-      <td><a href="data/基礎自治体/municipality/ja_municipality_area_with_pref_boundary.topojson">ja_municipality_area_<wbr>with_pref_boundary.topojson</a></td>
+      <td><a href="data/administrative_area/municipality/ja_municipality_area_with_pref_boundary.topojson">ja_municipality_area_&#8203;with_pref_boundary.topojson</a></td>
       <td>WIP</td>
       <td>WIP</td>
     </tr>
@@ -49,7 +49,7 @@ Power BIやTableauで使用できる日本地図(TopoJSON, GeoJSON)
       <td>基礎自治体</td>
       <td>地方公共団体コード5桁</td>
       <td>1741市区町村境界（都道府県界含む）</td>
-      <td><a href="data/基礎自治体/municipality/ja_municipality_area_with_pref_boundary_5.topojson">ja_municipality_area_<wbr>with_pref_boundary_5.topojson</a></td>
+      <td><a href="data/administrative_area/municipality/ja_municipality_area_with_pref_boundary_5.topojson">ja_municipality_area_&#8203;with_pref_boundary_5.topojson</a></td>
       <td>WIP</td>
       <td>WIP</td>
     </tr>
