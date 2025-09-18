@@ -1,8 +1,31 @@
-version: '3'
+version: "3"
 
 tasks:
+  install_deps:
+    desc: Install dependencies
+    cmds:
+      - brew install duckdb
+      - npm install -g mapshaper
+
   init_dwh:
     desc: Initialize DuckDB DWH database
     cmds:
       - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/initialize/init_dwh.sql
 
+  ingestion_mlit:
+    desc: Ingestion MLIT data
+    cmds:
+      - zsh processing/ingestion/mlit/get_data_and_load.sh
+
+  ingestion_da_abr:
+    desc: Ingestion DA-ABR data
+    cmds:
+      - zsh processing/ingestion/da_abr/get_data_and_load.sh
+
+  transform_municipality:
+    desc: Transform municipality data
+    cmds:
+      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/transform/ddb/mst_city/mst_city.sql
+      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/transform/ddb/administrative_area/municipality/dissolve_and_process_attr.sql
+      - zsh processing/transform/mpsh/administrative_area/municipality/simplify.sh
+      - zsh processing/transform/mpsh/administrative_area/municipality/simplify_full_lg_code.sh
