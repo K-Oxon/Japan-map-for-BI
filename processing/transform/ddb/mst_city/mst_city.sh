@@ -1,0 +1,1 @@
+duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/transform/ddb/mst_city/mst_city.sql

@@ -1,0 +1,5 @@
+-- 初期化スクリプト例
+-- 必要に応じてスキーマやテーブルを定義してください。
+-- 例:
+-- CREATE SCHEMA IF NOT EXISTS raw;
+-- CREATE SCHEMA IF NOT EXISTS mart;

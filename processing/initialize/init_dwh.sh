@@ -1,0 +1,1 @@
+duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/initialize/init_dwh.sql
