@@ -83,8 +83,6 @@ COPY (
 ) TO 'processing/intermediate_data/transformed/ja_municipality_area_1741.geojson' WITH (
   FORMAT GDAL,
   DRIVER 'GeoJSON',
-  -- あると便利：BBoxを各フィーチャに付与
-  LAYER_CREATION_OPTIONS 'WRITE_BBOX=YES',
-  -- 座標参照系メタデータ
+  -- 座標参照系メタデータ(6668 -> 4326で出力)
   SRS 'EPSG:4326'
 );

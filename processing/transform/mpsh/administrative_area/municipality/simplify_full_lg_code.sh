@@ -7,14 +7,12 @@ mapshaper processing/intermediate_data/transformed/ja_municipality_area_1741.geo
   -o format=topojson \
      quantization=1e5 \
      id-field=lg_code \
-     bbox \
      processing/intermediate_data/transformed/ja_municipality_area_tmp.topojson
 
 # 量子化後にclean
 mapshaper processing/intermediate_data/transformed/ja_municipality_area_tmp.topojson \
   -clean \
   -o format=topojson \
-     bbox \
      data/administrative_area/municipality/ja_municipality_area.topojson
 
 # 量子化後にclean、県境追加ver.
@@ -28,5 +26,4 @@ mapshaper processing/intermediate_data/transformed/ja_municipality_area_tmp.topo
   -target 1,pref_boundaries \
   -merge-layers force \
   -o format=topojson \
-     bbox \
      data/administrative_area/municipality/ja_municipality_area_with_pref_boundary.topojson
