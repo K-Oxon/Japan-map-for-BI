@@ -22,7 +22,7 @@ Power BIやTableauで使用できる日本地図(TopoJSON, GeoJSON)
       <td>基礎自治体</td>
       <td>地方公共団体コード6桁</td>
       <td>1741市区町村境界</td>
-      <td><a href="data/行政区域/municipality/ja_municipality_area.topojson">ja_municipality_area.topojson</a></td>
+      <td><a href="data/administrative_area/municipality/ja_municipality_area.topojson">ja_municipality_area.topojson</a></td>
       <td>WIP</td>
       <td>WIP</td>
     </tr>
