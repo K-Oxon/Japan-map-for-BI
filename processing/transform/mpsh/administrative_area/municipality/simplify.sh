@@ -1,7 +1,8 @@
-# 軽量化&topojson化
+# 軽量化(400km^2未満の地物は3.4%、それ以上の地物は0.5% | 隠岐の島町で400km^2くらい)& 小島省略 & topojson化
+# 3.4%は竹島がギリギリ雰囲気を保てるくらいのレベル
 mapshaper processing/intermediate_data/transformed/ja_municipality_area_1741.geojson \
   -proj EPSG:3857 \
-  -simplify visvalingam weighting=0.7 keep-shapes percentage=0.005 \
+  -simplify visvalingam weighting=0.7 keep-shapes variable percentage="this.area < 400000000 ? 0.034 : 0.005" \
   -filter-islands min-area=50000 \
   -proj EPSG:4326 \
   -o format=topojson \
@@ -14,6 +15,10 @@ mapshaper processing/intermediate_data/transformed/ja_municipality_area_5_tmp.to
   -clean \
   -o format=topojson \
      data/administrative_area/municipality/ja_municipality_area_5.topojson
+
+# ID数チェック
+mapshaper data/administrative_area/municipality/ja_municipality_area_5.topojson \
+  -info
 
 # 量子化後にclean、県境追加ver.
 mapshaper processing/intermediate_data/transformed/ja_municipality_area_5_tmp.topojson \

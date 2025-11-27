@@ -68,6 +68,10 @@ create or replace table dwh.dwh.japan_administrative_area_1741 as (
     select *
     from final
   );
+
+-- ユニークな地方公共団体コードを取得(1741 + 5)
+select count(distinct lg_code) as unq_cnt_lg_code from dwh.dwh.japan_administrative_area_1741;
+
 -- GeoJSON FeatureCollectionとしてファイルに出力する
 COPY (
   SELECT lg_code,
