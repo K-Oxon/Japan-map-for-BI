@@ -54,12 +54,22 @@ Power BIやTableauで使用できる日本地図(TopoJSON, GeoJSON)
       <td>都道府県</td>
       <td>都道府県コード2桁</td>
       <td>47都道府県境界</td>
-      <td>WIP</td>
+      <td><a href="data/administrative_area/prefecture/ja_prefecture_area.topojson">ja_prefecture_area.topojson</a></td>
       <td>WIP</td>
       <td>WIP</td>
     </tr>
   </tbody>
 </table>
+
+## 加工処理のイメージ
+
+### 行政区分
+
+[国土数値情報の行政区域データ](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2025.html)から取得したデータを元に、以下の処理を行っています。
+
+1. ポリゴンの簡素化
+2. 面積が小さいポリゴン(50000m²未満の小島や防波堤など)を省略
+3. 基礎自治体単位(1741市区町村)単位でポリゴンを結合 <br/>(都道府県: 47都道府県単位)
 
 ## ライセンス
 
