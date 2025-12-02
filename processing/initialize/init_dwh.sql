@@ -3,3 +3,4 @@
 -- 例:
 -- CREATE SCHEMA IF NOT EXISTS raw;
 -- CREATE SCHEMA IF NOT EXISTS mart;
+install spatial;

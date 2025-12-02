@@ -13,19 +13,26 @@ tasks:
       - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/initialize/init_dwh.sql
 
   ingestion_mlit:
-    desc: Ingestion MLIT data
+    desc: MLIT dataの準備
     cmds:
-      - zsh processing/ingestion/mlit/get_data_and_load.sh
+      - zsh processing/ingestion/mlit/get_data.sh
 
-  ingestion_da_abr:
-    desc: Ingestion DA-ABR data
+  ingestion_and_transform_da_abr:
+    desc: デジタル庁アドレスベース・レジストリデータの準備 & 加工
     cmds:
       - zsh processing/ingestion/da_abr/get_data_and_load.sh
+      - zsh processing/transform/ddb/mst_city/mst_city.sh
 
-  transform_municipality:
-    desc: Transform municipality data
+  flow_municipality:
+    desc: mapshaper(simplify & filter-islands) -> duckdb (政令指定都市の処理) -> mapshaper(clean & output)
     cmds:
-      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/transform/ddb/mst_city/mst_city.sql
-      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/transform/ddb/administrative_area/municipality/dissolve_and_process_attr.sql
-      - zsh processing/transform/mpsh/administrative_area/municipality/simplify.sh
-      - zsh processing/transform/mpsh/administrative_area/municipality/simplify_full_lg_code.sh
+      - zsh processing/transform/mpsh/administrative_area/municipality/simplify_from_shp.sh
+      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/ingestion/mlit/load_from_simplify_shp.sql
+      - duckdb processing/intermediate_data/ddb/dwh.duckdb -f processing/transform/ddb/administrative_area/municipality/process_attr.sql
+      - zsh processing/transform/mpsh/administrative_area/municipality/output.sh
+      - zsh processing/transform/mpsh/administrative_area/municipality/output_full_lg_code.sh
+
+  rm_intermediate_data:
+    desc: 中間データの削除
+    cmds:
+      - find processing/intermediate_data/transformed -type f ! -name ".gitkeep" -delete
