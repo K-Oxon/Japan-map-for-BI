@@ -11,6 +11,7 @@ processing/intermediate_data/data_source/**/*.dbf
 processing/intermediate_data/data_source/**/*.cpg
 processing/intermediate_data/data_source/**/*.shx
 processing/intermediate_data/transformed/**/*.topojson
+processing/intermediate_data/transformed/**/*.geojson
 
 !processing/intermediate_data/transformed/.gitkeep
 !processing/intermediate_data/data_source/da_abr/.gitkeep
