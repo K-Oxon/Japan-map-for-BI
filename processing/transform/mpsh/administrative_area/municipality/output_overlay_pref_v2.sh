@@ -23,7 +23,7 @@ mapshaper \
   -innerlines \
   -buffer 150 units=meters \
   -each 'boundary_id = this.id' \
-  -target municipality,pref_by_municipality,pref_boundaries \
+  -target pref_by_municipality,municipality,pref_boundaries \
   -merge-layers force \
   -o format=topojson \
      quantization=1e4 \
